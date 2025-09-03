@@ -24,10 +24,10 @@ Unlike heavyweight frameworks that abstract away the internals, Needle gives you
 ├─────────────────────────────────────────────────────────────────┤
 │                    Tensor Operations                            │
 ├─────────────────────────────────────────────────────────────────┤
-│               NDArray Backend (C++/CUDA)                       │
+│               NDArray Backend (C++/CUDA)                        │
 ├─────────────────────────────────────────────────────────────────┤
 │    CPU Backend     │    GPU Backend    │    DNNL Backend        │
-│   (Multi-threaded) │     (CUDA)       │   (Intel OneDNN)      │
+│   (Multi-threaded) │     (CUDA)        │   (Intel OneDNN)       │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -103,9 +103,10 @@ git clone --recursive https://github.com/kyrillosishak/Needle.git
 cd needle
 
 # Build high-performance backends
-mkdir build && cd build
-cmake ..
-make -j $(nproc)  # Parallel build for speed
+mkdir build && cd build && cmake .. && make -j $(nproc)  # Parallel build for speed
+
+cd ..
+pip install -e python/
 ```
 
 ### Environment Setup
